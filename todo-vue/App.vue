@@ -41,12 +41,9 @@ export default {
       Vue.set(items, index, { ...items[index], done: !items[index].done });
     }
   }
-
 }
 </script>
-
 <style>
-
   body {
     background: #FFF;
     color: #2c3e50;
@@ -116,5 +113,4 @@ export default {
     box-shadow: none;
     border: 0;
   }
-
 </style>
