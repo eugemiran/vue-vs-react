@@ -21,7 +21,6 @@
 </template>
 
 <script>
-import Vue from "vue";
 import TodoList from "./TodoList";
 
 export default {
@@ -36,9 +35,9 @@ export default {
       this.newItem = "";
     },
     handleDone(index) {
-      const items = this.items;
-      // This is for vue to react when updating in depth
-      Vue.set(items, index, { ...items[index], done: !items[index].done });
+      const items = [...this.items];
+      items[index] = {...items[index], done: !items[index].done};
+      this.items = items;
     }
   }
 }
