@@ -3,8 +3,14 @@
     <div class="wrapper">
       <div class="item-form">
         <div class="input-wrapper">
-          <label> Enter your new item: </label>
-          <input class="item-input" type="text" v-model="newItem" @keyup.enter="handleAdd" />
+          <label for="item"> Enter your new item: </label>
+          <input
+            id="item"
+            class="item-input"
+            type="text"
+            v-model="newItem"
+            @keyup.enter="handleAdd"
+          />
         </div>
         <button
           class="item-button"

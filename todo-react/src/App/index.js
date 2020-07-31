@@ -28,8 +28,9 @@ const App = () => {
       <div className="wrapper">
         <div className="item-form">
           <div className="input-wrapper">
-            <label> Enter your new item: </label>
+            <label for="item"> Enter your new item: </label>
             <input
+              id="item"
               className="item-input"
               type="text"
               value={newItem}
