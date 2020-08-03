@@ -1,7 +1,7 @@
 <template>
   <div class="list-wrapper">
     <h2>Your list:</h2>
-    <transition-group name="fade" tag="ul" class="list">
+    <ul class="list">
       <li v-for="(item, index) in items" :key="`${item.label}-${index}`">
         <input :id="`item-${index}`" type="checkbox" @change="handleDone(index)" />
         <label
@@ -11,7 +11,7 @@
           {{ item.label }}
         </label>
       </li>
-    </transition-group>
+    </ul>
   </div>
 </template>
 
@@ -46,13 +46,5 @@ export default {
 
   .list-wrapper {
     margin-top: 4rem;
-  }
-
-  .fade-enter-active, .fade-leave-active {
-    transition: opacity .5s;
-  }
-
-  .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
-    opacity: 0;
   }
 </style>

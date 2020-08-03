@@ -6,7 +6,7 @@ import "./styles.css";
 const TodoList = ({ items, handleDone }) => (
   <div className="list-wrapper">
     <h2>Your list:</h2>
-    <ul className="list fade">
+    <ul className="list">
       {items.map(({ done, label }, index) => (
         <li key={`${label}-${index}`}>
           <input
