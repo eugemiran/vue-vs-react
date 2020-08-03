@@ -13,6 +13,8 @@ const App = () => {
     setNewItem("");
   };
 
+  const handleChange = ({ target: { value } }) => { setNewItem(value) };
+
   const handleDone = (index) => {
     const newItems = [...items];
     newItems[index] = { ...newItems[index], done: !newItems[index].done };
@@ -20,8 +22,8 @@ const App = () => {
   };
 
   const handleKeyDown = (e) => {
-    if (e.key === 'Enter') handleAdd();
-  }
+    if (e.key === "Enter") handleAdd();
+  };
 
   return (
     <div id="app">
@@ -34,7 +36,7 @@ const App = () => {
               className="item-input"
               type="text"
               value={newItem}
-              onChange={e => setNewItem(e.target.value)}
+              onChange={handleChange}
               onKeyDown={handleKeyDown}
             />
           </div>
@@ -42,7 +44,7 @@ const App = () => {
             className="item-button"
             type="button"
             onClick={handleAdd}
-            disabled={newItem.trim() === ''}
+            disabled={newItem.trim() === ""}
           >
             Add
           </button>
