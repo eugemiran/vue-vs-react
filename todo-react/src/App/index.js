@@ -6,6 +6,8 @@ const App = () => {
   const [newItem, setNewItem] = useState("");
   const [items, setItems] = useState([]);
 
+  const handleChange = ({ target: { value } }) => { setNewItem(value) };
+
   const handleAdd = () => {
     const newItems = [...items];
     newItems.push({ label: newItem, done: false });
@@ -13,16 +15,14 @@ const App = () => {
     setNewItem("");
   };
 
-  const handleChange = ({ target: { value } }) => { setNewItem(value) };
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") handleAdd();
+  };
 
   const handleDone = (index) => {
     const newItems = [...items];
     newItems[index] = { ...newItems[index], done: !newItems[index].done };
     setItems(newItems);
-  };
-
-  const handleKeyDown = (e) => {
-    if (e.key === "Enter") handleAdd();
   };
 
   return (
